@@ -1,0 +1,108 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The big featured header on the homepage, with the site logo and description }}
+
+ <div class="header" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+     <div style="display: table-cell; vertical-align: middle;">
+       <div>
+        <a href="{{@blog.url}}"><h1>{{@blog.title}}</h1></a>
+       <div class="blog-description">{{@blog.description}}</div>
+       </div>
+     </div>
+ </div>
+
+<div class="container">
+
+<div class="menubar">
+
+{{> menu}}
+
+</div>
+{{! end of menubar}}
+
+
+
+
+  <center>Showing post(s) tagged under {{tag.name}}</center>
+  <div class="row" id="ms-container">
+
+
+
+
+    {{#foreach posts}}
+
+       <div class="col-md-4 ms-item">
+         {{content words="0"}}
+         <h1><a href="{{url}}">{{title}}</a></h1>
+         <p>{{excerpt words=25}}</p>
+         <div class="post-meta">
+         <i class="fa fa-clock-o"></i><span>&nbsp;{{date format="DD MMM YYYY"}}</span>  &nbsp;&nbsp;  <i class="fa fa-comment-o"></i> <span>&nbsp;<a href="{{url}}#disqus_thread">Comments</a></span>&nbsp;&nbsp; <i class="fa fa-smile-o"></i> <span>&nbsp;{{author.name}}</span></div>
+         <div class="bar"></div>
+
+        </div> 
+
+  {{/foreach}}
+
+
+{{! end of row}}
+</div>
+
+
+
+<div class="navigationbar">
+
+{{pagination}}
+
+
+{{! end of navigationbar}}
+</div>
+
+
+
+
+
+
+
+
+{{! end of container}}
+</div>
+    <div class="socialbar">
+
+ <div class="fb" style="display: table; height: 100px; overflow: hidden;">
+     <div style="display: table-cell; vertical-align: middle;">
+       <div>
+<a href="#"><i class="fa fa-facebook"></i></a>
+       </div>
+     </div>
+   </div>
+
+ <div class="tw" style="display: table; height: 100px; overflow: hidden;">
+     <div style="display: table-cell; vertical-align: middle;">
+       <div>
+<a href="#"><i class="fa fa-twitter"></i></a>
+       </div>
+     </div>
+   </div> 
+
+  <div class="dri" style="display: table; height: 100px; overflow: hidden;">
+     <div style="display: table-cell; vertical-align: middle;">
+       <div>
+<a href="#"><i class="fa fa-dribbble"></i></a>
+       </div>
+     </div>
+   </div>
+
+{{! end of socialbar}}
+</div>
+
+
+  <div class="copyright" style="display: table;overflow: hidden;">
+   <div style="display: table-cell; vertical-align: middle;">
+     <div>
+     All content copyright <a href="/">{{@blog.title}}</a> &copy; 2014 &bull; All rights reserved.
+     </div>
+   </div>
+ </div>

@@ -1,0 +1,25 @@
+ <div class="previous" style="display: table; height: 50px; overflow: hidden;">
+     <div style="display: table-cell; vertical-align: middle;">
+       <div>
+       
+       {{#if prev}}<a href="{{page_url prev}}"><i class="fa fa-angle-left"></i> </a>{{/if}}
+
+       </div>
+     </div>
+   </div>
+
+ <div class="page" style="display: table; height: 50px; overflow: hidden;">
+     <div style="display: table-cell; vertical-align: middle;">
+       <div>
+{{page}} of {{pages}}
+       </div>
+     </div>
+   </div> 
+
+  <div class="next" style="display: table; height: 50px; overflow: hidden;">
+     <div style="display: table-cell; vertical-align: middle;">
+       <div>
+       {{#if next}}<a href="{{page_url next}}"><i class="fa fa-angle-right"></i> </a>{{/if}}
+       </div>
+     </div>
+   </div>

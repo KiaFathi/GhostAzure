@@ -1,0 +1,123 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+ <div class="header" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+     <div style="display: table-cell; vertical-align: middle;">
+       <div>
+        <a href="{{@blog.url}}"><h1>{{@blog.title}}</h1></a>
+       <div class="blog-description">{{@blog.description}}</div>
+       </div>
+     </div>
+ </div>
+
+
+
+{{! end of menubar}}
+<div class="container">
+
+<div class="menubar">
+
+{{> menu}}
+
+</div>
+
+
+<div class="main-content">
+
+
+             {{#post}}
+
+      <div class="col-md-8 postarea">
+  
+        <h1>{{title}}</h1>
+         <div class="sidebar-bar"></div>
+        <div class="post-page-meta">By {{author.name}} {{tags separator=" , " prefix="in "}}</div>
+        <hr>
+        <div class="post-page-meta2">
+        <i class="fa fa-clock-o"></i><span>&nbsp;{{date format="DD MMM YYYY"}}</span>  &nbsp;&nbsp;  <i class="fa fa-comment-o"></i> <span>&nbsp;<a href="{{url}}#disqus_thread">Comments</a></span>
+        </div>
+         {{content}}
+        <br>
+
+      <span class="facebook-share"><a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook"></i>&nbsp;&nbsp;facebook</a></span> 
+      <span class="twitter-share"><a href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter"></i>&nbsp;&nbsp;twitter</a></span>
+      <span class="google-share"><a href="https://plus.google.com/share?url={{url absolute="true"}}"onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus"></i>&nbsp;&nbsp;google+</a></span>
+        <br>        <br>
+
+
+<hr>
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'grand-theme'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        <br>
+      </div>
+
+
+
+      <div class="sidebar col-md-4">
+        <h3>About the author</h3>
+        <div class="sidebar-bar"></div>
+        <img src="{{author.image}}"></img>
+
+        <div class="author-name"> <h4>{{author.name}}</h4></div>
+         <p>{{author.bio}}</p>
+
+
+        <h3>Connect with me</h3>
+        <div class="sidebar-bar"></div>
+
+        <ul class="social-icons icon-flat list-unstyled list-inline"> 
+       {{> socialprofiles-sidebar}}
+        </ul>
+
+        {{#if tags}}
+        <h3>Tagged under</h3>
+        <div class="sidebar-bar"></div>
+        <div class="tags">
+    <ul>
+    {{#foreach tags}}
+        <li><a href="{{url}}">{{name}}</a></li>
+    {{/foreach}}
+</ul>
+        </div>
+        {{/if}}
+
+
+      </div>
+
+ </div>
+
+{{/post}}
+
+
+
+{{! end of container}}
+</div>
+
+
+
+{{> social-bottom}}
+
+
+   <div class="copyright" style="display: table;overflow: hidden;">
+   <div style="display: table-cell; vertical-align: middle;">
+     <div>
+     All content copyright <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; 2014 &bull; All rights reserved.
+     </div>
+   </div>
+ </div>
