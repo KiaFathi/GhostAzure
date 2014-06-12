@@ -13,17 +13,16 @@ config = {
 
         // Example mail config
         // Visit http://docs.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'postmaster@kiafathi.azurewebsites.net', // mailgun username
+                    pass: '31bofbp0klc2'  // mailgun password
+                }
+            }
+        },
         // ```
 
         database: {
