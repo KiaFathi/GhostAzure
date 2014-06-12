@@ -71,7 +71,7 @@ width: 75%;
 
 	height: 50px;
 	background: #ECF0F1;
-		float:left;
+		float:center;
 		font-size: 1.8rem;
 
        -webkit-transition:background .2s ease-out;
