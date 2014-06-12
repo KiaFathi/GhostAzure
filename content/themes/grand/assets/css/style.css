@@ -68,7 +68,7 @@ width: 75%;
 
 .link{
 	width: 33.33%;
-  display:inline-block;
+  display: table;
 
 	height: 50px;
 	background: #ECF0F1;
