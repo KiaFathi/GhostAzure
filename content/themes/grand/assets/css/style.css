@@ -50,12 +50,14 @@ width: 75%;
 	width: 100%;
   text-align: center;
   color: #fff;
+  margin: auto;
   margin-bottom: 12rem;
 
 }
 .menubar a{
 	text-decoration: none;
 	color: #666;
+      margin: auto;
 	    display: block;
 	    font-family: 'PT Sans', sans-serif;
 
