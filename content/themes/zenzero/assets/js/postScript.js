@@ -10,7 +10,7 @@
      */
     var get_disqus_num_replies = function() {
         // YOU NEED TO CHANGE 'zenzero' WITH THE NAME OF YOUR BLOG
-        var disqus_shortname = 'kia-fathi';
+        var disqus_shortname = 'KiaFathi';
         // Please do not change anything except the name of the blog
         var links = document.getElementsByTagName('a');
         var query = '?';
